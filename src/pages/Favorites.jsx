@@ -10,7 +10,7 @@ export default function Favorites() {
     <div className="container">
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
         <Link to="/" className="btn-back" style={{ marginBottom: 0 }}>
-          ← Voltar
+        Voltar
         </Link>
         <h2 style={{ margin: 0 }}>Meus Favoritos</h2>
       </div>

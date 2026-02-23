@@ -33,8 +33,8 @@ export default function PokemonDetails() {
 
   return (
     <div className="container">
-      <Link to="/" style={{ textDecoration: 'none', color: '#666', marginBottom: '20px', display: 'inline-block' }}>
-        ← Voltar
+      <Link to="/" className="btn-back">
+        Voltar
       </Link>
 
       <div className="details-container">
