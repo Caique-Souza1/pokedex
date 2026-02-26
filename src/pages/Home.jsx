@@ -15,18 +15,18 @@ export default function Home() {
   const [pokemons, setPokemons] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
-  
   const [currentGen, setCurrentGen] = useState(generations[0]);
 
   useEffect(() => {
     async function fetchPokemons() {
-      setLoading(true); 
-      setPokemons([]);  
-      
+      setLoading(true);
+      setPokemons([]);
+
       try {
         const response = await api.get(
           `/pokemon?limit=${currentGen.limit}&offset=${currentGen.offset}`
         );
+
         const results = response.data.results;
 
         const detailed = await Promise.all(
@@ -42,7 +42,7 @@ export default function Home() {
     }
 
     fetchPokemons();
-  }, [currentGen]); 
+  }, [currentGen]);
 
   const filtered = pokemons.filter((p) =>
     p.name.toLowerCase().includes(search.toLowerCase())
@@ -51,20 +51,24 @@ export default function Home() {
   return (
     <div className="container">
       <div className="controls">
-        <select 
+        <select
           className="gen-selector"
-          value={currentGen.name} 
+          value={currentGen.name}
           onChange={(e) => {
-            const selected = generations.find(g => g.name === e.target.value);
+            const selected = generations.find(
+              (g) => g.name === e.target.value
+            );
             setCurrentGen(selected);
           }}
         >
-          {generations.map(gen => (
-            <option key={gen.name} value={gen.name}>{gen.name}</option>
+          {generations.map((gen) => (
+            <option key={gen.name} value={gen.name}>
+              {gen.name}
+            </option>
           ))}
         </select>
 
-        <SearchBar setSearch={setSearch} />
+        <SearchBar search={search} setSearch={setSearch} />
       </div>
 
       {loading ? (

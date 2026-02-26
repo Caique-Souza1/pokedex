@@ -7,16 +7,18 @@ import Favorites from "./pages/Favorites";
 
 function App() {
   return (
-    <FavoritesProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <FavoritesProvider>
         <Header />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/pokemon/:name" element={<PokemonDetails />} />
           <Route path="/favorites" element={<Favorites />} />
         </Routes>
-      </BrowserRouter>
-    </FavoritesProvider>
+        
+      </FavoritesProvider>
+    </BrowserRouter>
   );
 }
 

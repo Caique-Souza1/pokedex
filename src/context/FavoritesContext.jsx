@@ -4,9 +4,8 @@ export const FavoritesContext = createContext();
 
 export function FavoritesProvider({ children }) {
   const [favorites, setFavorites] = useState(() => {
-    const stored = localStorage.getItem("favorites");
-
-    return stored ? JSON.parse(stored) : [];
+    const saved = localStorage.getItem("favorites");
+    return saved ? JSON.parse(saved) : [];
   });
 
   useEffect(() => {
@@ -14,13 +13,15 @@ export function FavoritesProvider({ children }) {
   }, [favorites]);
 
   function toggleFavorite(pokemon) {
-    const exists = favorites.find(p => p.name === pokemon.name);
+    setFavorites(prevFavorites => {
+      const exists = prevFavorites.some(p => p.name === pokemon.name);
 
-    if (exists) {
-      setFavorites(favorites.filter(p => p.name !== pokemon.name));
-    } else {
-      setFavorites([...favorites, pokemon]);
-    }
+      if (exists) {
+        return prevFavorites.filter(p => p.name !== pokemon.name);
+      } else {
+        return [...prevFavorites, pokemon];
+      }
+    });
   }
 
   return (

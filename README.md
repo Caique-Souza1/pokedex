@@ -1,13 +1,59 @@
-# 🔴⚪ Pokédex React
+# 🔴⚪ Web Pokédex
 
-Uma interface moderna e temática para explorar o mundo Pokémon. Este projeto foi desenvolvido com um design inspirado nos jogos clássicos, focado em ser visualmente agradável, nostálgico e rápido.
+Projeto desenvolvido em React com o objetivo de consumir a API pública PokeAPI e exibir informações sobre Pokémon da 1ª até a 5ª geração.
 
----
+A ideia foi criar uma Pokédex simples, organizada e funcional, aplicando os conceitos vistos em aula como componentes, estado, rotas e consumo de API.
 
-## 🎮 O que você vai encontrar?
+## 📌 O que a aplicação faz
 
-* **Design Nostálgico:** Uma interface escura com fontes oficiais e botões estilo RPG, trazendo a sensação dos jogos originais para a web.
-* **Explore as Regiões:** Navegue facilmente pelos Pokémon da 1ª Geração (Kanto) até a 5ª Geração (Unova).
-* **Busca Instantânea:** Encontre seu Pokémon favorito em tempo real digitando o nome dele.
-* **Monte seu Time:** Sistema de **Favoritos** que salva sua lista no navegador. Você pode fechar a aba e voltar depois que seus Pokémon favoritos ainda estarão lá!.
-* **Detalhes Completos:** Veja os tipos, altura, peso e a arte oficial de cada Pokémon.
+- Lista Pokémon por geração
+- Permite buscar pelo nome
+- Mostra detalhes individuais
+- Permite adicionar e remover favoritos
+- Salva os favoritos no navegador (LocalStorage)
+
+## 🛠 Tecnologias utilizadas
+
+- React
+- React Router DOM
+- Axios
+- Context API
+- CSS
+- Vite
+
+## 🧠 Conceitos aplicados
+
+Durante o desenvolvimento foram utilizados:
+
+- useState
+- useEffect
+- useContext
+- Props
+- Eventos (onClick, onChange)
+- Rotas com React Router
+- Consumo de API REST
+- Armazenamento com LocalStorage
+
+## 📂 Organização do projeto
+
+A aplicação foi dividida em componentes para facilitar manutenção e reutilização:
+
+- Header
+- PokemonCard
+- SearchBar
+- Página Home
+- Página de Detalhes
+- Página de Favoritos
+- Contexto para gerenciamento global de favoritos
+- Serviço separado para requisições à API
+
+## 🌐 API utilizada
+
+Os dados são consumidos da API pública:
+
+https://pokeapi.co/
+
+## 📄 Documentação
+
+- 📦 Guia de Instalação (./INSTALL.md)
+- 🎮 Guia de Uso (./USAGE.md)
